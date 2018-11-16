@@ -27,10 +27,10 @@ class DefaultController extends Controller
 
 
 
-        $car_id_1=$carRepo->find(1);//find the car having id 1
+        $car_id_1=$carRepo->find(2);//find the car having id 1
         $data['only_car_id_1']=$car_id_1;
         $data['only_car_id_1_make']=$car_id_1->getMake()->getName();
-        $data['only_car_id_1_optimize']=$carRepo->optimizeQueryFindID(1);
+        $data['only_car_id_1_optimize']=$carRepo->optimizeQueryFindID(2);
 
 
         // replace this example code with whatever you need

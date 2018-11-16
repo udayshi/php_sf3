@@ -50,7 +50,7 @@ class Car
      */
     public function getPrice(): float
     {
-        return $this->price;
+        return (float) $this->price;
     }
 
     /**
@@ -58,7 +58,7 @@ class Car
      */
     public function setPrice(float $price): void
     {
-        $this->price = $price;
+        $this->price = (float) $price;
     }
 
     /**

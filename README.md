@@ -25,6 +25,10 @@ php bin/console doctrine:database:drop --force
 php bin/console doctrine:generate:entity
 php bin/console doctrine:schema:update --force
 php bin/console doctrine:generate:entity  --entity="AppBundle:Make" --fields="name:string"
+php bin/console generate:doctrine:form AppBundle:Make
+php bin/console generate:doctrine:form AppBundle:Car
+php bin/console generate:doctrine:crud --entity=AppBundle:Car --format=annotation --with-write 
+
 ```
 
 
