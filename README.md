@@ -24,7 +24,6 @@ php bin/console doctrine:database:drop --force
 ```
 php bin/console doctrine:generate:entity
 php bin/console doctrine:schema:update --force
-php bin/console  
 php bin/console doctrine:generate:entity  --entity="AppBundle:Make" --fields="name:string"
 ```
 

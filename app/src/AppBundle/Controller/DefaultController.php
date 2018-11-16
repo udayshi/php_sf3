@@ -5,6 +5,8 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use AppBundle\Entity\Car;
+use AppBundle\Entity\Make;
 
 class DefaultController extends Controller
 {
@@ -33,5 +35,60 @@ class DefaultController extends Controller
 
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', ['data'=>$data]);
+    }
+
+    /**
+     * @Route("/add", name="add")
+     */
+    public function addAction(Request $request)
+    {
+        $car=new Car();
+        $makeRepo=$this->getDoctrine()->getRepository('AppBundle:Make');
+
+        $car->setPrice(20000);
+        $car->setIsFulloption(true);
+        $car->setMake($makeRepo->find(1));
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($car);
+        $em->flush();
+        echo 'Added';
+        exit;
+
+
+    }
+
+    /**
+     * @Route("/update", name="update")
+     */
+    public function updateAction(Request $request)
+    {
+
+        $carRepo=$this->getDoctrine()->getRepository('AppBundle:Car');
+
+        $car=$carRepo->optimizeQueryFindID(1);
+        $car->setPrice(20000);
+        $car->setIsFulloption(true);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($car);
+        $em->flush();
+        echo 'Updated';
+        exit;
+    }
+
+    /**
+     * @Route("/delete", name="update")
+     */
+    public function deleteAction(Request $request)
+    {
+
+        $carRepo=$this->getDoctrine()->getRepository('AppBundle:Car');
+
+        $car=$carRepo->optimizeQueryFindID(1);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($car);
+        $em->flush();
+        echo 'Deleted';
+        exit;
     }
 }
