@@ -14,6 +14,12 @@ composer create-project symfony/website-skeleton:3.4.* app/
 composer create-project symfony/framework-standard-edition:3.4.* app/
 composer install
 ```
+
+## Generate Custom Bundle
+```
+php bin/console generate:bundle
+```
+
 ## Getting Started
 
  ```
