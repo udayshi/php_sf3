@@ -15,11 +15,14 @@ composer create-project symfony/framework-standard-edition:3.4.* app/
 composer install
 ```
 
-## Generate Custom Bundle
+## Generate Thirdparty Knp Menu Bundle
 ```
-php bin/console generate:bundle
-```
+composer require knplabs/knp-menu-bundle dev-master
 
+
+```
+## Register the bundle at app/AppKernel.php
+new \Knp\Bundle\MenuBundle\KnpMenuBundle()
 ## Getting Started
 
  ```
