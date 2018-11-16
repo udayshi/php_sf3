@@ -15,10 +15,19 @@ composer create-project symfony/framework-standard-edition:3.4.* app/
 composer install
 ```
 
-## Generate Custom Bundle
+## Doctine
 ```
-php bin/console generate:bundle
+php bin/console doctrine:database:create
+php bin/console doctrine:database:drop --force
 ```
+### Create Entity
+```
+php bin/console doctrine:generate:entity
+php bin/console doctrine:schema:update --force
+php bin/console  
+php bin/console doctrine:generate:entity  --entity="AppBundle:Make" --fields="name:string"
+```
+
 
 ## Getting Started
 
