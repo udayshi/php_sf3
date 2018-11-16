@@ -15,6 +15,11 @@ composer create-project symfony/framework-standard-edition:3.4.* app/
 composer install
 ```
 
+#Available Branches
+master
+knpmenu
+doctrine
+
 ## Generate Custom Bundle
 ```
 php bin/console generate:bundle
