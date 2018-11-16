@@ -33,3 +33,7 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+    demo.hello:
+       class: AppBundle\Service\DemoService
+       public:  true
+       tags: ['demo.hello']
